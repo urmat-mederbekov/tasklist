@@ -15,10 +15,12 @@ public class TaskDTO {
                 .dateTime(task.getDateTime())
                 .description(task.getDescription())
                 .id(task.getId())
+                .isDone(task.isDone())
                 .build();
     }
 
     private String id;
     private String description;
     private LocalDateTime dateTime;
+    private boolean isDone;
 }
