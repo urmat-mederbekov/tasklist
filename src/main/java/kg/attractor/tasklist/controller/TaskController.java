@@ -24,4 +24,9 @@ public class TaskController {
     public TaskDTO addTask(@RequestBody TaskDTO taskData){
         return taskService.addTask(taskData);
     }
+
+    @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
+    public TaskDTO changeTaskStatus(@RequestBody TaskDTO taskData){
+        return taskService.changeTaskStatus(taskData);
+    }
 }
