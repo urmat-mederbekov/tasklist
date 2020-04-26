@@ -28,8 +28,15 @@ public class TaskService {
                 .dateTime(LocalDateTime.now())
                 .description(taskData.getDescription())
                 .id(UUID.randomUUID().toString())
+                .isDone(false)
                 .build();
-        System.out.println(task.getId());
+        taskRepo.save(task);
+        return TaskDTO.from(task);
+    }
+    public TaskDTO changeTaskStatus(TaskDTO taskData){
+        Task task = taskRepo.findById(taskData.getId()).get();
+        System.out.println(task.isDone() + " -> " + !task.isDone());
+        task.setDone(!task.isDone());
         taskRepo.save(task);
         return TaskDTO.from(task);
     }
