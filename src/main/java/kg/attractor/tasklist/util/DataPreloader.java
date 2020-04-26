@@ -20,9 +20,9 @@ public class DataPreloader {
             taskRepo.deleteAll();
 
             List<Task> tasks = new ArrayList<>();
-            tasks.add(Task.builder().description("Read a book").id(UUID.randomUUID().toString()).dateTime(LocalDateTime.now()).build());
-            tasks.add(Task.builder().description("Watch Youtube").id(UUID.randomUUID().toString()).dateTime(LocalDateTime.now()).build());
-            tasks.add(Task.builder().description("Learn marketing").id(UUID.randomUUID().toString()).dateTime(LocalDateTime.now()).build());
+            tasks.add(Task.builder().description("Read a book").id(UUID.randomUUID().toString()).dateTime(LocalDateTime.now()).isDone(true).build());
+            tasks.add(Task.builder().description("Watch Youtube").id(UUID.randomUUID().toString()).dateTime(LocalDateTime.now()).isDone(false).build());
+            tasks.add(Task.builder().description("Learn marketing").id(UUID.randomUUID().toString()).dateTime(LocalDateTime.now()).isDone(false).build());
 
             taskRepo.saveAll(tasks);
         };
