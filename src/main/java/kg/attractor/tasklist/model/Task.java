@@ -5,7 +5,6 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 @Document("tasks")
 @Data
@@ -15,7 +14,8 @@ import java.util.UUID;
 public class Task {
 
     @Id
-    private String id = UUID.randomUUID().toString();
+    private String id;
     private String description;
-    private LocalDateTime dateTime = LocalDateTime.now();
+    private LocalDateTime dateTime;
+    private boolean isDone;
 }
